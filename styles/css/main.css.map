@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,AAAC,CACD,UAAU,CAAE,KAAK,CACpB",
+    "sources": [
+        "../../node_modules/bs-recipes/recipes/gulp.task.sequence/app/scss/main.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
