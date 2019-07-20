@@ -1,19 +1,28 @@
 let siteLogic = {
 	// properties
-	
+
 	content: document.querySelector('.main-content'),
 	menu: document.querySelector('.menu'),
 	menuBtn: document.querySelector('#btnCloseMenu'),
 	menuLinks: document.querySelectorAll('.menu .menu__link'),
+	sections: document.querySelectorAll('.sections'),
 	// defaults
 	isMobWidth: false,
 
 	// main
-	init () {
-		if (window.innerWidth < 768) this.isMobWidth = true;
+	init() {
+
 		this.fixedWidth();
 		this.widthListener();
-		this.menuListener()
+		this.menuListener();
+		if (window.innerWidth < 768) {
+			this.content.classList.remove('menu-active');
+			this.isMobWidth = true;
+		}
+		this.sections.forEach(sect => {
+			sect.style.display = 'none'
+		});
+		this.sections[3].style.display = 'block'
 	},
 
 	// methods
@@ -51,15 +60,22 @@ let siteLogic = {
 	menuListener() {
 		let self = this;
 		this.menuBtn.addEventListener('click', () => {
-			this.menu.classList.toggle('active')
+			this.menu.classList.toggle('active');
+			if (self.isMobWidth == false) {
+				this.content.classList.toggle('menu-active')
+			}
 		});
-		this.menuLinks.forEach(link => {
+		this.menuLinks.forEach(function(link, i) {
 			link.addEventListener('click', function () {
 				self.arrRemoveClass(self.menuLinks);
-				this.classList.add('active')
+				this.classList.add('active');
 				if (self.isMobWidth) {
 					self.menu.classList.add('active')
-				}
+				};
+				self.sections.forEach(sect => {
+					sect.style.display = 'none'
+				});
+				self.sections[i].style.display = 'block'
 			})
 		})
 	}
