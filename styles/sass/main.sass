@@ -1,5 +1,5 @@
 @import "vars"
-@import "fonts"
+// @import "fonts"
 @import "libs"
 
 ::placeholder
@@ -39,12 +39,15 @@ body
 
 b, strong
   font-weight: bold
+
+
+
 .main-content
   transition: .3s ease
 .main-content.menu-active
   margin-left: 280px
   +media-breakpoint-down(xs)
-    margin-left: 220px
+    margin-left: 0
 
 
 
