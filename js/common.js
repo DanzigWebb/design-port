@@ -11,7 +11,6 @@ let siteLogic = {
 
 	// main
 	init() {
-
 		this.fixedWidth();
 		this.widthListener();
 		this.menuListener();
