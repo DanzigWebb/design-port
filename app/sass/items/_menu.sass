@@ -11,7 +11,6 @@
   min-height: 100vh
   height: 100%
   font-family: 'PT Sans Caption', sans-serif
-  
   display: flex
   align-items: flex-start
   border-right: 10px solid $accent
@@ -19,6 +18,10 @@
   position: fixed
   left: 0
   top: 0
+  transition: .3s ease
+  +media-breakpoint-down(xs)
+    width: 220px
+  
   &-content
     width: 100%
     position: relative
@@ -31,19 +34,31 @@
     padding: 0
     &-item
       list-style: none
-      margin: 5px 0
 
 .menu__link
   color: #777
   text-transform: uppercase
   transition: .4s
   display: block
+  padding: 5px 0
   padding-left: 15px
   font-size: 15px
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    width: 0
+    transition: .5s ease
+    background-color: $accent
+    z-index: -1
   &:hover
     color: #fff
     text-decoration: none
-    background-color: $accent
+    &:after
+      width: 100%
   &.active
     background-color: $accent
     color: #fff
@@ -66,7 +81,7 @@
 
 .menu-close
   position: absolute
-  right: -34px
+  right: -32px
   top: 0
   &__btn
     background-color: $accent
@@ -83,3 +98,9 @@
     background-repeat: no-repeat
     background-position: -275px -200px
     overflow: hidden
+
+
+.menu.active
+  left: -280px
+  +media-breakpoint-down(xs)
+    left: -220px
