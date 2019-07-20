@@ -10,6 +10,7 @@ let siteLogic = {
 
 	// main
 	init () {
+		if (window.innerWidth < 768) this.isMobWidth = true;
 		this.fixedWidth();
 		this.widthListener();
 		this.menuListener()
@@ -48,8 +49,18 @@ let siteLogic = {
 		})
 	},
 	menuListener() {
+		let self = this;
 		this.menuBtn.addEventListener('click', () => {
 			this.menu.classList.toggle('active')
+		});
+		this.menuLinks.forEach(link => {
+			link.addEventListener('click', function () {
+				self.arrRemoveClass(self.menuLinks);
+				this.classList.add('active')
+				if (self.isMobWidth) {
+					self.menu.classList.add('active')
+				}
+			})
 		})
 	}
 }
