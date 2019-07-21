@@ -17,6 +17,10 @@ let siteLogic = {
 		if (window.innerWidth < 768) {
 			this.content.classList.remove('menu-active');
 			this.isMobWidth = true;
+			this.menu.classList.add('active')
+			setTimeout( ()=> {
+				this.menu.classList.remove('active')
+			}, 2300)
 		}
 		this.sections.forEach(sect => {
 			sect.style.display = 'none'
