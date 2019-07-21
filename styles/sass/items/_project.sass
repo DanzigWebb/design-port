@@ -1,9 +1,50 @@
-.projects
+.project
   min-height: 100vh
   width: 100%
   padding: 20px
-  h1
-    font-size: 50px
-    font-weight: bold
-    text-transform: uppercase
+  background-image: url(../../img/project.jpg)
+  background-size: cover
+  &-filter
+    display: flex
+    justify-content: flex-end
+    flex-wrap: wrap
+    margin: 35px 0
+  &-btn
+    background-color: $accent
+    height: 40px
+    width: 110px
+    border: none
+    color: #fff
+    font-family: 'PT Sans Caption', sans-serif
+    border-radius: 4px
+    margin: 0 5px
+    display: block
+    cursor: pointer
+    margin-bottom: 15px
+.project-content
+  margin: 30px 0
+  display: flex
+  flex-wrap: wrap
+  min-height: 80vh
+.project-item
+  width: 33.3333333%
+  margin-bottom: 20px
+  height: 100%
+  +media-breakpoint-down(lg)
+    width: 50%
+    margin-bottom: 10px
+  +media-breakpoint-down(xs)
+    width: 100%
+  &-content
+    margin: 10px
+    background-color: #fff
+    img
+      width: 100%
+  p
     text-align: center
+    font-weight: bold
+    font-size: 20px
+    text-transform: uppercase
+    margin: 0
+    +media-breakpoint-down(lg)
+      font-size: 18px
