@@ -81,3 +81,8 @@ let siteLogic = {
 }
 
 siteLogic.init()
+
+let portItems = document.querySelectorAll('.portfolio-item');
+portItems.forEach(item => {
+	item.style.animationDelay = Math.random() * 2 + 's'
+})
