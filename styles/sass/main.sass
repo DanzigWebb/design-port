@@ -14,7 +14,7 @@ body
   min-width: 320px
   position: relative
   line-height: 1.65
-  font-family: $default-font
+  font-family: 'PT Sans Caption', sans-serif
   overflow-x: hidden
   color: $text
   padding: 0
@@ -73,7 +73,35 @@ h1
 .sections
   transition: .4s ease
   animation: showSections .6s ease backwards
+  position: relative
+.img-wrap
+  display: flex
+  align-items: center
+  justify-content: center
 
+.section-content
+  padding: 30px 50px
+  background-color: #fff
+  max-width: 680px
+  animation: textContent .6s ease backwards
+  animation-delay: .9s
+  overflow-y: auto
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  h2
+    text-transform: uppercase
+    text-align: center
+    font-size: 40px
+  img
+    max-width: 100%
+  hr
+    background-color: #dedede
+    height: 1px
+    border: none
+  p
+    font-size: 14px
 //////////////////////////////////////////////////////
 // animations
 //////////////////////////////////////////////////////
@@ -92,4 +120,12 @@ h1
   to
     opacity: 1
     transform: translateY(0)
+
+@keyframes textContent
+  from
+    opacity: 0
+    transform: translateX(-100%)
+  to
+    opacity: 1
+    transform: translateX(0)
 @import "media" // Always at the end
